@@ -1,3 +1,5 @@
+<?php include('db.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,19 +28,37 @@
                                 <th>End Date</th>
                                 <th>Action</th>
                             </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>Compiler Design read</td>
-                                <td><p class="high">High</p>
-                                </td>
-                                <td>07 July 2023</td>
-                                <td>08 July 2023</td>
-                                <td>
-                                    <a href="" class="btn btn-primary">Completed</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
-                                    <a href="" class="btn btn-warning">Not Completed</a>
-                                </td>
-                            </tr>
+                            <?php 
+                                $sql ="SELECT * FROM tasks_table";
+                                $query = mysqli_query($conn, $sql);
+                                if(mysqli_num_rows($query)>0){
+                                    while($row = mysqli_fetch_assoc($query)){
+                                        echo "id".$row['id'];?>
+                                        <tr>
+                                            <td><?php echo $row['id'];?></td>
+                                            <td><?php echo $row['t_name'];?></td>
+                                            <td><?php if ($row['priority']==2){?>
+                                                <p class="high">High</p><?php }?>
+                                                <?php if($row['priority']==1){?>
+                                                    <p class="medium">High</p><?php }?>
+                                                <?php if($row['priority']==0){?>
+                                                    <p class="medium">Low</p><?php }?>
+                                            </td>
+                                            <td><?php echo $row['s_date'];?></td>
+                                            <td><?php echo $row['e_date'];?></td>
+                                            <td>
+                                                <a href="" class="btn btn-primary">Completed</a>
+                                                <a href="" class="btn btn-danger">Delete</a>
+                                                <a href="" class="btn btn-warning">Not Completed</a>
+                                            </td>
+                                        </tr>
+                            <?php    }
+                                }else{
+                                    echo "Not listed";
+                                }
+                                mysqli_close($conn);
+                            ?>
+                            
                         </table>
                     </div>
                 </div>

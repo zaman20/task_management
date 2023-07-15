@@ -1,3 +1,5 @@
+<?php include('db.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +18,18 @@
 <!-- add tasks area -->
                 <div class="tasks-wrapper">
                     <h2 class="title">Add Tasks</h2>
-                   <form action="">
+                   <form action="test.php" method="POST">
                     <label for="name">Title</label>
-                    <input type="text" class="form-control my-2" placeholder="Tasks Name">
+                    <input type="text" name="name" class="form-control my-2" placeholder="Tasks Name">
                     <label for="sdate">Start Date</label>
-                    <input type="date" class="form-control my-2">
+                    <input type="date" name="sDate" class="form-control my-2">
                     <label for="edate">End date</label>
-                    <input type="date" class="form-control my-2">
+                    <input type="date" name="eDate" class="form-control my-2">
                     <label for="Priority">Task Pririoty</label>
-                    <select name="" id="" class="form-select my-2">
-                        <option value="">High</option>
-                        <option value="">Medium</option>
-                        <option value="">Low</option>
+                    <select name="priority" id="" class="form-select my-2">
+                        <option value="2">High</option>
+                        <option value="1">Medium</option>
+                        <option value="0">Low</option>
                     </select>
                     <input type="submit" value="Add Task" class="form-control my-2 btn btn-dark">
                    </form>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +17,11 @@
 <!-- add tasks area -->
                 <div class="tasks-wrapper login-box">
                     <h2 class="title">Login</h2>
-                   <form action="">
+                   <form action="test.php" method="post">
                     <label for="name">User Name</label>
-                    <input type="text" class="form-control my-2" placeholder="Enter your Name">
+                    <input type="text" name="user_name" class="form-control my-2" placeholder="Enter your Name">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control my-2">
+                    <input type="password" name="password" class="form-control my-2">
                     <input type="submit" value="Login" class="form-control my-2 btn btn-primary">
                    </form>
                 </div>
@@ -28,4 +29,5 @@
         </div>
     </div>
 </body>
+
 </html>
