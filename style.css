@@ -20,14 +20,21 @@ h2.title {
     border-bottom: 5px double gray;
     padding-bottom: 7px;
 }
-p.high {
+.high ,.medium, .low {
     background: red;
     color: white;
-    font-weight: 700;
-    width: 55px;
-    padding: 2px 9px;
+    font-weight: 300;
+    width: 62px;
+    height: 21px;
     border-radius: 5px;
     text-align: center;
+    font-size: 14px;
+}
+.medium{
+   background: #4de2f7;
+}
+.low{
+    background:#27fd84;
 }
 .add-new-btn{
     width: 20%;
