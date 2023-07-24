@@ -1,4 +1,5 @@
-<?php include('db.php');?>
+<?php
+include('db.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +65,8 @@
                 </div>
 <!-- add new and logout session area -->
                 <div class="add-new">
-                    <a href="" class="btn btn-dark add-new-btn">Add New Task</a>
-                    <a href="" class="btn btn-dark logout-btn">Logout</a>
+                    <a href="add-new-task.php" class="btn btn-dark add-new-btn">Add New Task</a>
+                    <a href="index.php" class="btn btn-dark logout-btn">Logout</a>
                 </div>
 <!-- pending and completed tasks area -->
                 <div class="tasks-wrapper flex">

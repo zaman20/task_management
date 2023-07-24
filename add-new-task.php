@@ -36,8 +36,8 @@
                 </div>
 <!-- add new and logout session area -->
                 <div class="add-new">
-                    <a href="" class="btn btn-dark add-new-btn">Go Main Page</a>
-                    <a href="" class="btn btn-dark logout-btn">Logout</a>
+                    <a href="main.php" class="btn btn-dark add-new-btn">Go Main Page</a>
+                    <a href="index.php" class="btn btn-dark logout-btn">Logout</a>
                 </div>
             </div>
         </div>

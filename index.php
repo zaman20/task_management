@@ -19,11 +19,18 @@
                     <h2 class="title">Login</h2>
                    <form action="test.php" method="post">
                     <label for="name">User Name</label>
-                    <input type="text" name="user_name" class="form-control my-2" placeholder="Enter your Name">
+                    <input type="text" name="uname" class="form-control my-2" placeholder="Enter your Name">
                     <label for="password">Password</label>
                     <input type="password" name="password" class="form-control my-2">
                     <input type="submit" value="Login" class="form-control my-2 btn btn-primary">
                    </form>
+
+                   <?php if(isset($_GET['error'])){
+                   
+                       echo $_GET['error'];
+                  
+                    }?>
+
                 </div>
             </div>
         </div>

@@ -1,17 +1,17 @@
 <?php
     include('db.php');
 
-    $title = $_POST['name'];
-    $priority = $_POST['priority'];
-    $sDate = $_POST['sDate'];
-    $eDate = $_POST['eDate'];
+    $name = $_POST['uname'];
+    $pass = $_POST['password'];
 
-    $sql = "INSERT INTO tasks_table (t_name,priority,s_date,e_date,status) 
-    VALUES('$title','$priority','$sDate','$eDate',0) ";
+    $sql = "SELECT * FROM users WHERE user_name ='$name' AND password='$pass'";
     $query= mysqli_query($conn, $sql);
-    if($query){
-        echo "Record Added";
+    if(mysqli_num_rows($query) === 1){
+       $row = mysqli_fetch_assoc($query);
+       $_SESSION['uName']= $row['user_name'];
+       header("Location: main.php");
     }
     else{
-        echo "Error!";
+        header("Location: index.php?error=Incorrect User Name or Password");
+        exit();
     }
